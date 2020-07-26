@@ -1,5 +1,5 @@
 {
-  "name": "@karuta/asmodee-werewolf-core",
+  "name": "@asmodee/werewolf-core",
   "version": "0.1.0",
   "description": "Common modules of Werewolves of Miller's Hollow",
   "main": "dist",
