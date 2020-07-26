@@ -1,0 +1,41 @@
+{
+  "name": "@karuta/asmodee-werewolf-core",
+  "version": "0.1.0",
+  "description": "Common modules of Werewolves of Miller's Hollow",
+  "main": "dist",
+  "scripts": {
+    "build": "tsc",
+    "debug": "tsc --incremental",
+    "test": "eslint --ext=ts src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takashiro/asmodee-werewolf-core.git"
+  },
+  "keywords": [
+    "werewolf",
+    "board",
+    "game",
+    "assistant"
+  ],
+  "author": "Kazuichi Takashiro",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/takashiro/asmodee-werewolf-core/issues"
+  },
+  "homepage": "https://github.com/takashiro/asmodee-werewolf-core#readme",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.7.0",
+    "@typescript-eslint/parser": "^3.7.0",
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "@types/node": "^12.12.53"
+  }
+}
