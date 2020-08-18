@@ -4,8 +4,8 @@
   "description": "Common modules of Werewolves of Miller's Hollow",
   "main": "dist",
   "scripts": {
-    "build": "tsc",
-    "debug": "tsc --incremental",
+    "build": "rimraf dist && tsc",
+    "debug": "tsc --incremental --sourceMap",
     "test": "eslint --ext=ts src"
   },
   "repository": {
@@ -33,6 +33,7 @@
     "eslint": "^7.5.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.0",
+    "rimraf": "^3.0.2",
     "typescript": "^3.9.7"
   },
   "dependencies": {
