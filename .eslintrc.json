@@ -26,7 +26,11 @@
 			}
 		],
 		"linebreak-style": "off",
-		"no-tabs": "off"
+		"no-shadow": "off",
+		"no-tabs": "off",
+		"@typescript-eslint/no-shadow": [
+			"error"
+		]
 	},
 	"settings": {
 		"import/resolver": {
