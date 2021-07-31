@@ -1,4 +1,4 @@
-Werewolves of Miller's Hollow
+Werewolves of Miller's Hollow [![Node CI](https://github.com/takashiro/asmodee-werewolf-core/actions/workflows/nodejs.yml/badge.svg)](https://github.com/takashiro/asmodee-werewolf-core/actions/workflows/nodejs.yml)
 ==========
 
 | Example Page |    http://werewolf.takashiro.cn       |
