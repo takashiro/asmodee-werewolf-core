@@ -25,6 +25,15 @@ jobs:
         run: npm run build
       -
         name: Publish
-        run: npm publish --access=public
+        run: |
+          cd dist
+          cp ../LICENSE .
+          cp ../README.md .
+          cp ../package.json .
+          npm pkg delete devDependencies
+          npm pkg delete files
+          npm pkg delete scripts
+          npm pkg set main=index.js
+          npm publish --access=public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

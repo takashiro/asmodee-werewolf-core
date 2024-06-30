@@ -1,6 +1,6 @@
 # Werewolves of Miller's Hollow
 
-[![Node CI](https://github.com/takashiro/asmodee-werewolf-core/actions/workflows/nodejs.yml/badge.svg)](https://github.com/takashiro/asmodee-werewolf-core/actions/workflows/nodejs.yml)
+[![Node.js CI](https://github.com/takashiro/asmodee-werewolf-core/actions/workflows/nodejs.yml/badge.svg)](https://github.com/takashiro/asmodee-werewolf-core/actions/workflows/nodejs.yml)
 [![NPM Package](https://img.shields.io/npm/v/@asmodee/werewolf-core.svg)](https://npmjs.org/package/@asmodee/werewolf-core)
 
 
