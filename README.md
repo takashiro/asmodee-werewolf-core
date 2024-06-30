@@ -1,13 +1,16 @@
-Werewolves of Miller's Hollow [![Node CI](https://github.com/takashiro/asmodee-werewolf-core/actions/workflows/nodejs.yml/badge.svg)](https://github.com/takashiro/asmodee-werewolf-core/actions/workflows/nodejs.yml)
-==========
+# Werewolves of Miller's Hollow
+
+[![Node CI](https://github.com/takashiro/asmodee-werewolf-core/actions/workflows/nodejs.yml/badge.svg)](https://github.com/takashiro/asmodee-werewolf-core/actions/workflows/nodejs.yml)
+[![NPM Package](https://img.shields.io/npm/v/@asmodee/werewolf-core.svg)](https://npmjs.org/package/@asmodee/werewolf-core)
+
 
 | Example Page |    http://werewolf.takashiro.cn       |
 |--------------|---------------------------------------|
 | Author       |           Kazuichi Takashiro          |
 
 
-License
--------
+## License
+
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
 published by the Free Software Foundation, either version 3 of the
@@ -21,13 +24,12 @@ GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-Introduction
-------------
+## Introduction
 
 The project contains common modules to build the online app to arrange role cards of the board game Werewolves of Miller's Hollow.
 
-Dependant Components
--------------------
+## Dependant Components
+
 1. [RESTful API](https://github.com/takashiro/asmodee-werewolf-server)
 1. [React App](https://github.com/takashiro/asmodee-werewolf-react)
 1. [WeChat App](https://github.com/takashiro/asmodee-werewolf-wechat)
