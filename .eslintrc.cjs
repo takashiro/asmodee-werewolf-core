@@ -17,20 +17,12 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
-    'import/extensions': [
-      'error',
-      'ignorePackages',
-      {
-        ts: 'never',
-        js: 'never',
-      },
-    ],
+    'import/extensions': 'off',
+    'import/no-unresolved': 'off',
     'linebreak-style': 'off',
     'no-shadow': 'off',
     'no-tabs': 'off',
-    '@typescript-eslint/no-shadow': [
-      'error',
-    ],
+    '@typescript-eslint/no-shadow': 'error',
   },
   settings: {
     'import/resolver': {

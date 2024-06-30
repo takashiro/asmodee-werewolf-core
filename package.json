@@ -2,10 +2,11 @@
   "name": "@asmodee/werewolf-core",
   "version": "0.1.4",
   "description": "Common modules of Werewolves of Miller's Hollow",
+  "type": "module",
   "main": "dist",
   "scripts": {
-    "build": "rimraf dist && tsc",
-    "debug": "tsc --incremental --sourceMap",
+    "build": "rimraf dist && tsc -p src",
+    "debug": "tsc -p src --incremental --sourceMap",
     "test": "eslint --ext=ts,js ."
   },
   "repository": {

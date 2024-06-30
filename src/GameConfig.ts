@@ -1,4 +1,4 @@
-import Role from './Role';
+import Role from './Role.js';
 
 interface GameConfig {
 	playerNum: number;
