@@ -1,7 +1,7 @@
 {
-  "name": "@asmodee/werewolf-core",
+  "name": "@asmodee/werewolf-model",
   "version": "1.0.1",
-  "description": "Common modules of Werewolves of Miller's Hollow",
+  "description": "Common data models of Werewolves of Miller's Hollow",
   "type": "module",
   "main": "dist",
   "scripts": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/takashiro/asmodee-werewolf-core.git"
+    "url": "git+https://github.com/takashiro/asmodee-werewolf-model.git"
   },
   "keywords": [
     "werewolf",
@@ -22,9 +22,9 @@
   "author": "Kazuichi Takashiro",
   "license": "AGPL-3.0",
   "bugs": {
-    "url": "https://github.com/takashiro/asmodee-werewolf-core/issues"
+    "url": "https://github.com/takashiro/asmodee-werewolf-model/issues"
   },
-  "homepage": "https://github.com/takashiro/asmodee-werewolf-core#readme",
+  "homepage": "https://github.com/takashiro/asmodee-werewolf-model#readme",
   "files": [
     "dist"
   ],
