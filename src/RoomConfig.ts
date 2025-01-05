@@ -1,4 +1,4 @@
-import { GameConfig } from './GameConfig.js';
+import type { GameConfig } from './GameConfig.js';
 
 export interface RoomConfig extends GameConfig {
 	id: number;
