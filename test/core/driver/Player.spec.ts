@@ -24,8 +24,8 @@ it('changes his role', () => {
 	const changed = jest.fn();
 	player.once('roleChanged', changed);
 	player.setRole(Role.Villager);
-	expect(player.getRole()).toStrictEqual([Role.Villager]);
-	expect(changed).toBeCalledWith([Role.Villager]);
+	expect(player.getRole()).toBe(Role.Villager);
+	expect(changed).toBeCalledWith(Role.Villager);
 });
 
 it('is killed', () => {
