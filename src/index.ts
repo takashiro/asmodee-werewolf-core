@@ -2,6 +2,7 @@ export * from './GameConfig.js';
 export * from './PlayerProfile.js';
 export * from './Role.js';
 export * from './RoomConfig.js';
+export * from './Selection.js';
 export * from './ServerStatus.js';
 export * from './Team.js';
 export * from './Teamship.js';
