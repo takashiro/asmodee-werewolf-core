@@ -7,7 +7,7 @@
   "scripts": {
     "build": "rimraf dist && tsc -p src",
     "debug": "tsc -p src --incremental --sourceMap",
-    "test": "eslint --ext=ts,js ."
+    "test": "eslint"
   },
   "repository": {
     "type": "git",
@@ -29,12 +29,12 @@
     "dist"
   ],
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^7.14.1",
-    "@typescript-eslint/parser": "^7.14.1",
-    "eslint": "^8.57.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.29.1",
+    "@eslint/js": "^9.13.0",
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^22.7.7",
+    "eslint": "^9.13.0",
     "rimraf": "^5.0.7",
-    "typescript": "^5.5.2"
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.10.0"
   }
 }
