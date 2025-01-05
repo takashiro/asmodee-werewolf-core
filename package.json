@@ -7,7 +7,9 @@
   "scripts": {
     "build": "rimraf dist && tsc -p src",
     "debug": "tsc -p src --incremental --sourceMap",
-    "test": "eslint"
+    "test": "npm run lint && npm run jest",
+    "lint": "eslint",
+    "jest": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -29,14 +31,18 @@
     "src/*"
   ],
   "dependencies": {
+    "@asmodee/werewolf-core": "file:src/core",
     "@asmodee/werewolf-model": "file:src/model"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
     "@types/eslint__js": "^8.42.3",
     "@types/node": "^22.7.7",
+    "cross-env": "^7.0.3",
     "eslint": "^9.13.0",
+    "jest": "^29.7.0",
     "rimraf": "^5.0.7",
+    "ts-jest": "^29.2.5",
     "typescript": "^5.6.3",
     "typescript-eslint": "^8.10.0"
   }
