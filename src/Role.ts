@@ -1,4 +1,4 @@
-enum Role {
+export enum Role {
 	Unknown,
 	Werewolf,
 	AlphaWolf,
@@ -38,5 +38,3 @@ enum Role {
 	Scarlett,
 	MiracleMerchant,
 }
-
-export default Role;

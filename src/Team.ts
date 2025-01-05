@@ -1,8 +1,6 @@
-enum Team {
+export enum Team {
 	Unknown,
 	Werewolf,
 	Villager,
 	Other,
 }
-
-export default Team;

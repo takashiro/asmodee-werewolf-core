@@ -1,8 +1,6 @@
-import Role from './Role.js';
+import { Role } from './Role.js';
 
-interface GameConfig {
+export interface GameConfig {
 	playerNum: number;
 	readonly roles: Role[];
 }
-
-export default GameConfig;

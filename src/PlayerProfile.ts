@@ -1,8 +1,6 @@
-import Role from './Role.js';
+import { Role } from './Role.js';
 
-interface PlayerProfile {
+export interface PlayerProfile {
 	seat: number;
 	roles: Role[];
 }
-
-export default PlayerProfile;

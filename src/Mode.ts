@@ -1,6 +1,4 @@
-enum Mode {
+export enum Mode {
 	Normal,
 	Dual,
 }
-
-export default Mode;
