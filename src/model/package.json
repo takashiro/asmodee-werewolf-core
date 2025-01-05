@@ -1,0 +1,23 @@
+{
+  "name": "@asmodee/werewolf-model",
+  "version": "1.0.1",
+  "description": "Common data models of Werewolves of Miller's Hollow",
+  "type": "module",
+  "main": "index.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takashiro/asmodee-werewolf-core.git"
+  },
+  "keywords": [
+    "werewolf",
+    "board",
+    "game",
+    "assistant"
+  ],
+  "author": "Kazuichi Takashiro",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/takashiro/asmodee-werewolf-core/issues"
+  },
+  "homepage": "https://github.com/takashiro/asmodee-werewolf-core#readme"
+}

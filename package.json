@@ -1,6 +1,6 @@
 {
-  "name": "@asmodee/werewolf-model",
-  "version": "1.0.1",
+  "name": "@asmodee/werewolf",
+  "version": "0.0.0",
   "description": "Common data models of Werewolves of Miller's Hollow",
   "type": "module",
   "main": "dist",
@@ -25,9 +25,12 @@
     "url": "https://github.com/takashiro/asmodee-werewolf-model/issues"
   },
   "homepage": "https://github.com/takashiro/asmodee-werewolf-model#readme",
-  "files": [
-    "dist"
+  "workspaces": [
+    "src/*"
   ],
+  "dependencies": {
+    "@asmodee/werewolf-model": "file:src/model"
+  },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
     "@types/eslint__js": "^8.42.3",
