@@ -11,5 +11,3 @@ export abstract class EventListener<EventType, ParamType> {
 	 */
 	abstract process(param: ParamType): Promise<void>;
 }
-
-export default EventListener;

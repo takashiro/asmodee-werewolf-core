@@ -1,4 +1,4 @@
-import type EventListener from '../driver/EventListener.js';
+import type { EventListener } from '../driver/EventListener.js';
 
 export abstract class Skill<DriverType, PlayerType> {
 	protected finished = false;
@@ -47,5 +47,3 @@ export abstract class Skill<DriverType, PlayerType> {
 	 */
 	abstract getEffects(): EventListener<number, unknown>[] | undefined;
 }
-
-export default Skill;

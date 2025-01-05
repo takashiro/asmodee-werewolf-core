@@ -6,6 +6,7 @@ export default {
 	],
 	extensionsToTreatAsEsm: ['.ts'],
 	moduleNameMapper: {
+		'^@asmodee/werewolf-(.*)\\.js$': '<rootDir>/src/$1',
 		'^(\\.{1,2}/.*)\\.js$': '$1',
 	},
 	transform: {

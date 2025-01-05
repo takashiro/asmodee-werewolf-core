@@ -4,8 +4,8 @@ import {
 	it,
 } from '@jest/globals';
 
-import EventDriver from '../../../src/core/driver/EventDriver.js';
-import EventListener from '../../../src/core/driver/EventListener.js';
+import { EventDriver } from '@asmodee/werewolf-core/driver/EventDriver.js';
+import { EventListener } from '@asmodee/werewolf-core/driver/EventListener.js';
 
 const enum GameEvent {
 	U,
@@ -52,4 +52,8 @@ it('triggers GameEvent.B', async () => {
 	expect(p3).toBeCalledWith(data);
 	p2.mockClear();
 	p3.mockClear();
+});
+
+it('triggers GameEvent.U', async () => {
+	await driver.trigger(GameEvent.U);
 });

@@ -5,7 +5,7 @@ import type {
 } from '@asmodee/werewolf-model';
 import { Teamship } from '@asmodee/werewolf-model/Teamship.js';
 
-import type Skill from './Skill.js';
+import type { Skill } from './Skill.js';
 
 export interface Player {
 	on(event: 'roleChanged', listener: (role: Role) => void): this;
@@ -136,5 +136,3 @@ export class Player extends EventEmitter {
 		this.skills = this.skills.filter(condition);
 	}
 }
-
-export default Player;

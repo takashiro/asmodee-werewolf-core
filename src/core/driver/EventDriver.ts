@@ -1,4 +1,4 @@
-import EventListener from './EventListener.js';
+import { EventListener } from './EventListener.js';
 
 /**
  * An event driver to fire events and execute event handlers.
@@ -34,5 +34,3 @@ export class EventDriver<EventType> {
 		}
 	}
 }
-
-export default EventDriver;
