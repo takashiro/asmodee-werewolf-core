@@ -5,3 +5,4 @@ export * from './RoomConfig.js';
 export * from './ServerStatus.js';
 export * from './Team.js';
 export * from './Teamship.js';
+export * from './Vision.js';
