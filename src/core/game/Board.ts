@@ -1,4 +1,4 @@
-import { Role } from '@asmodee/werewolf-model';
+import type { Mark, Role } from '@asmodee/werewolf-model';
 
 import type { Collection } from './Collection.js';
 import type { Player, PlayerSkill } from './Player.js';
@@ -44,8 +44,12 @@ export class Board extends EventDriver<Event> {
 		return [...this.players];
 	}
 
+	findPlayers(condition: (player: Player) => boolean): Player[] {
+		return this.players.filter(condition);
+	}
+
 	getAlivePlayers(): Player[] {
-		return this.players.filter((player) => player.isAlive());
+		return this.findPlayers((player) => player.isAlive());
 	}
 
 	getPlayer(seat: number): Player | undefined {
@@ -110,7 +114,7 @@ export class Board extends EventDriver<Event> {
 		}
 	}
 
-	async killPlayer(victim: Player, reason: string): Promise<void> {
+	async killPlayer(victim: Player, reason: Mark): Promise<void> {
 		if (!victim.isAlive()) {
 			return;
 		}

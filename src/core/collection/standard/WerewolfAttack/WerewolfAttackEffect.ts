@@ -1,7 +1,7 @@
+import { Mark } from '@asmodee/werewolf-model';
 import { Event } from '../../../event/Event.js';
 import { Board } from '../../../game/Board.js';
 import { SkillEffect } from '../../SkillEffect.js';
-import { WerewolfAttacked } from '../constants.js';
 
 export class WerewolfAttackEffect extends SkillEffect<void> {
 	constructor(board: Board) {
@@ -9,10 +9,10 @@ export class WerewolfAttackEffect extends SkillEffect<void> {
 	}
 
 	async process(): Promise<void> {
-		const seat = this.board.getProperty(WerewolfAttacked) as number;
-		const victim = this.board.getPlayer(seat);
-		if (victim) {
-			await this.board.killPlayer(victim, WerewolfAttacked);
+		const victims = this.board.findPlayers((player) => player.isAlive() && player.hasMark(Mark.WerewolfAttacked));
+		for (const victim of victims) {
+			await this.board.killPlayer(victim, Mark.WerewolfAttacked);
+			victim.removeMark(Mark.WerewolfAttacked);
 		}
 	}
 }

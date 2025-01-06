@@ -1,7 +1,8 @@
 import { EventEmitter } from 'events';
-import type {
-	Role,
-	Team,
+import {
+	type Mark,
+	type Role,
+	type Team,
 } from '@asmodee/werewolf-model';
 import { Teamship } from '@asmodee/werewolf-model/Teamship.js';
 
@@ -33,6 +34,8 @@ export class Player extends EventEmitter {
 	protected deathDate?: number;
 
 	protected skills: PlayerSkill[] = [];
+
+	protected marks = new Set<Mark>();
 
 	constructor(seat: number, role: Role) {
 		super();
@@ -134,5 +137,36 @@ export class Player extends EventEmitter {
 	 */
 	removeSkill(condition: (skill: PlayerSkill) => boolean): void {
 		this.skills = this.skills.filter(condition);
+	}
+
+	/**
+	 * @returns All marks on the player
+	 */
+	getMarks(): Mark[] {
+		return [...this.marks.values()];
+	}
+
+	/**
+	 * Check whether the player has a mark.
+	 * @param mark mark
+	 */
+	hasMark(mark: Mark): boolean {
+		return this.marks.has(mark);
+	}
+
+	/**
+	 * Add a mark on the player.
+	 * @param mark mark
+	 */
+	addMark(mark: Mark): void {
+		this.marks.add(mark);
+	}
+
+	/**
+	 * Remove a mark from the player.
+	 * @param mark mark
+	 */
+	removeMark(mark: Mark): void {
+		this.marks.delete(mark);
 	}
 }

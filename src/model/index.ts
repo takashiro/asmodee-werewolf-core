@@ -1,4 +1,5 @@
 export * from './GameConfig.js';
+export * from './Mark.js';
 export * from './PlayerProfile.js';
 export * from './Role.js';
 export * from './RoomConfig.js';
