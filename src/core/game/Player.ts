@@ -22,7 +22,7 @@ export interface Player {
 	emit(event: 'aliveChanged', alive: boolean): boolean;
 }
 
-export type PlayerSkill = Skill<unknown, Player>;
+export type PlayerSkill = Skill<unknown, Player, unknown>;
 
 export class Player extends EventEmitter {
 	protected seat: number;

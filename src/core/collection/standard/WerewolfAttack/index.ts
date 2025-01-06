@@ -3,7 +3,7 @@ import type { Player } from '../../../game/Player.js';
 import { NightSkill } from '../../NightSkill.js';
 import { WerewolfAttackEffect } from './WerewolfAttackEffect.js';
 
-export class WerewolfAttack extends NightSkill {
+export class WerewolfAttack extends NightSkill<void> {
 	isFeasible(selected: Player[]): boolean {
 		return selected.length === 1 && selected[0].isAlive();
 	}
@@ -17,6 +17,7 @@ export class WerewolfAttack extends NightSkill {
 			this.driver.setProperty(Mark.WerewolfAttacked, target.getSeat());
 			target.addMark(Mark.WerewolfAttacked);
 		}
+		this.setFinished();
 	}
 
 	override getEffects(): WerewolfAttackEffect[] {

@@ -1,5 +1,5 @@
 import { it, expect } from '@jest/globals';
-import { Role } from '@asmodee/werewolf-model';
+import { Role, Vision } from '@asmodee/werewolf-model';
 
 import { Board } from '@asmodee/werewolf-core/game/Board.js';
 import { Player } from '@asmodee/werewolf-core/game/Player.js';
@@ -27,7 +27,7 @@ board.setCollections([standard]);
 it('starts the game', async () => {
 	await board.start();
 	expect(board.getPeriod()).toBe(Period.Night);
-	expect(board.getNextSkill()).toBeTruthy();
+	expect(board.getNextSkills()).toBeTruthy();
 });
 
 it('wakes up werewolves', async () => {
@@ -36,26 +36,45 @@ it('wakes up werewolves', async () => {
 		expect(player.isAlive()).toBe(true);
 	}
 
-	const skill1 = board.getNextSkill()!;
-	expect(players[0].getSkill(0)).toBe(skill1);
-	expect(skill1.isFeasible([players[0], players[2]])).toBe(false);
+	const skills = board.getNextSkills();
+	expect(skills).toHaveLength(4);
+
+	for (let i = 0; i < 4; i++) {
+		expect(players[i].getSkill(0)).toBe(skills[i]);
+	}
+
+	const [skill] = skills;
+	expect(skill.isFeasible([players[0], players[2]])).toBe(false);
 
 	const targets = [players[7]];
-	expect(skill1.isFeasible(targets)).toBe(true);
-	expect(skill1.isAvailable()).toBe(true);
-	await skill1.execute([players[7]]);
+	expect(skill.isFeasible(targets)).toBe(true);
+	expect(skill.isAvailable()).toBe(true);
+	await skill.execute([players[7]]);
 
-	expect(skill1.isAvailable()).toBe(false);
-	const skill2 = players[0].getSkill(0)!;
-	expect(skill2.isAvailable()).toBe(false);
-	const skill3 = players[0].getSkill(0)!;
-	expect(skill3.isAvailable()).toBe(false);
-	const skill4 = players[0].getSkill(0)!;
-	expect(skill4.isAvailable()).toBe(false);
+	for (const sk of skills) {
+		expect(sk.isAvailable()).toBe(false);
+	}
+});
+
+it('wakes up seer', async () => {
+	const skills = board.getNextSkills();
+	expect(skills).toHaveLength(1);
+
+	const [skill] = skills;
+	expect(skill.isFeasible([])).toBe(false);
+
+	const target = board.getPlayer(3)!;
+	expect(skill.isFeasible([target])).toBe(true);
+
+	const { players } = await skill.execute([target]) as Vision;
+	expect(players).toHaveLength(1);
+	const [seen] = players;
+	expect(seen.role).toBe(Role.Werewolf);
+	expect(seen.seat).toBe(3);
 });
 
 it('goes into dawn', async () => {
-	expect(board.getNextSkill()).toBeUndefined();
+	expect(board.getNextSkills()).toHaveLength(0);
 	await board.tick();
 	expect(board.getPeriod()).toBe(Period.Day);
 

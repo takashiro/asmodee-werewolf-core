@@ -127,8 +127,8 @@ export class Board extends EventDriver<Event> {
 		await this.trigger(Event.AfterDeath, event);
 	}
 
-	getNextSkill(): PlayerSkill | undefined {
-		let target: PlayerSkill | undefined;
+	getNextSkills(): PlayerSkill[] {
+		let skills: PlayerSkill[] = [];
 		let priority = Number.POSITIVE_INFINITY;
 		for (const player of this.getAlivePlayers()) {
 			for (const skill of player.getSkills()) {
@@ -136,11 +136,13 @@ export class Board extends EventDriver<Event> {
 					continue;
 				}
 				if (skill.getPriority() < priority) {
-					target = skill;
+					skills = [skill];
 					priority = skill.getPriority();
+				} else if (skill.getPriority() === priority) {
+					skills.push(skill);
 				}
 			}
 		}
-		return target;
+		return skills;
 	}
 }

@@ -1,6 +1,6 @@
 import type { EventListener } from '../driver/EventListener.js';
 
-export abstract class Skill<DriverType, PlayerType> {
+export abstract class Skill<DriverType, PlayerType, OutputType> {
 	protected finished = false;
 
 	constructor(
@@ -40,7 +40,7 @@ export abstract class Skill<DriverType, PlayerType> {
 	 * Run the skill against selected players.
 	 * @param selected selected players
 	 */
-	abstract execute(selected: PlayerType[]): Promise<void>;
+	abstract execute(selected: PlayerType[]): Promise<OutputType>;
 
 	/**
 	 * @returns A few skill effects triggered on specific events.

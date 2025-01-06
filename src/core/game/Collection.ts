@@ -3,7 +3,7 @@ import { Role } from '@asmodee/werewolf-model';
 import type { Player } from './Player.js';
 import type { Skill } from './Skill.js';
 
-export type SkillCreator<DriverType> = new(driver: DriverType, owner: Player) => Skill<DriverType, Player>;
+export type SkillCreator<DriverType> = new(driver: DriverType, owner: Player) => Skill<DriverType, Player, unknown>;
 
 export class Collection<DriverType> {
 	protected skills = new Map<Role, SkillCreator<DriverType>[]>();
